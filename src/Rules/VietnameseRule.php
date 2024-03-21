@@ -17,7 +17,7 @@ class VietnameseRule implements ValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         if (! is_string($value) || ! $this->isVietnamese($value)) {
-            $fail('validation.vietnamese')->translate([
+            $fail('sphoton::validation.vietnamese')->translate([
                 'attribute' => $attribute,
             ]);
         }

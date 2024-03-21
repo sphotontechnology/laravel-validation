@@ -12,7 +12,7 @@ abstract class TestCase extends BaseTestCase
     public function getIlluminateArrayTranslator()
     {
         return new Translator(
-            new ArrayLoader(),
+            $this->translateResource(),
             'en'
         );
     }
@@ -20,5 +20,15 @@ abstract class TestCase extends BaseTestCase
     public function makeValidator(array $data, array $rule)
     {
         return new Validator($this->getIlluminateArrayTranslator(), $data, $rule);
+    }
+
+    public function translateResource()
+    {
+        $loader = new ArrayLoader();
+        $loader->addMessages('en', 'validation', [
+            'vietnamese' => 'The :attribute must be a Vietnamese string.',
+        ], 'sphoton');
+
+        return $loader;
     }
 }
