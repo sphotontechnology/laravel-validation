@@ -8,6 +8,7 @@ use Illuminate\Contracts\Validation\ValidationRule;
 class VietnameseNumberRule implements ValidationRule
 {
     use Traits\IsVietnamese;
+    use Traits\ResolveAttribute;
 
     /**
      * Run the validation rule.
@@ -18,7 +19,7 @@ class VietnameseNumberRule implements ValidationRule
     {
         if (! is_string($value) || ! $this->isVietnamese($value, '0-9')) {
             $fail('sphoton::validation.vietnamese')->translate([
-                'attribute' => $attribute,
+                'attribute' => $this->resolveAttribute($attribute),
             ]);
         }
     }
