@@ -33,3 +33,10 @@ it('should return false if the given string is not a Vietnamese string', functio
     $validator = $this->makeValidator(['name' => 'Nguyễn Văn A@'], ['name' => $rule]);
     $this->assertFalse($validator->passes());
 });
+
+it('check message', function () {
+    $rule = new \Sphoton\Validation\Rules\VietnameseRule();
+    $validator = $this->makeValidator(['name' => 'Nguyễn Văn A 123'], ['name' => $rule]);
+    $validator->passes();
+    $this->assertEquals('The name must be a Vietnamese string.', $validator->messages()->first());
+});
