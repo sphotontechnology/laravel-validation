@@ -1,0 +1,28 @@
+{
+    "name": "sphoton/validation",
+    "description": "Validation for Laravel Framework",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Sphoton\\Validation\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "hoangkhacphuc",
+            "email": "hoangkhacphuc.dev@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0||^11.0"
+    },
+    "scripts": {
+        "fix": "./vendor/bin/pint -v"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0"
+    }
+}
