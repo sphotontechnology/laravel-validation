@@ -8,6 +8,11 @@
             "Sphoton\\Validation\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
     "authors": [
         {
             "name": "hoangkhacphuc",
@@ -20,9 +25,18 @@
         "illuminate/support": "^10.0||^11.0"
     },
     "scripts": {
-        "fix": "./vendor/bin/pint -v"
+        "fix": "./vendor/bin/pint -v",
+        "test": "./vendor/bin/pest"
     },
     "require-dev": {
-        "laravel/pint": "^1.0"
+        "laravel/pint": "^1.0",
+        "illuminate/validation": "^10.0||^11.0",
+        "illuminate/translation": "^10.0||^11.0",
+        "pestphp/pest": "3.x-dev"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     }
 }

@@ -16,7 +16,7 @@ class VietnameseNumberRule implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        if (! is_string($value) || ! $this->isVietnamese($value)) {
+        if (! is_string($value) || ! $this->isVietnamese($value, '0-9')) {
             $fail('validation.vietnamese')->translate([
                 'attribute' => $attribute,
             ]);
